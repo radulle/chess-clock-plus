@@ -1,4 +1,9 @@
 {
+  "name": "chess-clock-plus",
+  "description": "Chess Clock Plus",
+  "author": "Nikola Radulaški",
+  "license": "MIT",
+  "version": "0.0.1",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",

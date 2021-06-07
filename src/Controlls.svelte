@@ -31,7 +31,7 @@
   <Icon
     type="reset"
     size={1.5}
-    on:click={clock.reset}
+    on:click={() => clock.reset()}
     class={classes(
       "center",
       "right",

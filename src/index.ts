@@ -1,16 +1,16 @@
-import App from "./Clock.svelte"
+import Clock from "./Clock.svelte"
 
-var app = new App({
+var clock = new Clock({
   target: document.body,
 })
 
-export default app
+export default clock
 
 // Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
 // Learn more: https://www.snowpack.dev/concepts/hot-module-replacement
 if (import.meta.hot) {
   import.meta.hot.accept()
   import.meta.hot.dispose(() => {
-    app.$destroy()
+    clock.$destroy()
   })
 }
