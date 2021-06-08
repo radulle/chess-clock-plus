@@ -1,7 +1,7 @@
 <script lang="ts">
   import Icon from "./Icon.svelte"
-  import { clock, settings, state } from "./store"
-  import { classes } from "./utils"
+  import { clock, settings, state } from "./stores"
+  import { classes } from "./helpers"
 </script>
 
 <div class="Controlls">

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { press, state } from "./store"
-  import { getTimeParts, pad } from "./utils"
+  import { getTimeParts, pad } from "./helpers"
+  import { press, state } from "./stores"
 
   export let player: 0 | 1
   let time: string
@@ -32,14 +32,14 @@
     &.p0 {
       border-radius: var(--unit) var(--unit) 0 0;
       margin-top: var(--unit);
-      background: #efe0b1;
-      color: #a4441a;
-      text-shadow: 0 0 3px #ff4e00;
+      background: var(--color-bg2);
+      color: var(--color-red);
+      text-shadow: 0 0 3px var(--color-red);
       height: calc(50% - var(--unit));
       &.selected {
         margin-top: unset;
-        background: #fff4d3;
-        color: #bfa371;
+        background: var(--color-border);
+        color: var(--color-brown);
         text-shadow: 0 0 0.2rem transparent;
         height: 50%;
       }
@@ -55,14 +55,14 @@
     &.p1 {
       border-radius: 0 0 var(--unit) var(--unit);
       margin-bottom: var(--unit);
-      background: #fffaea;
-      color: #a4441a;
-      text-shadow: 0 0 3px #ff4e00;
+      background: var(--color-bg);
+      color: var(--color-red);
+      text-shadow: 0 0 3px var(--color-red);
       height: calc(50% - var(--unit));
       &.selected {
         margin-bottom: unset;
-        background: #fff4d3;
-        color: #d7bf95;
+        background: var(--color-border);
+        color: var(--color-brown);
         text-shadow: 0 0 0.2rem transparent;
         height: 50%;
       }

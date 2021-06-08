@@ -18,7 +18,7 @@
     /* Additional Options */
     "strict": true,
     "skipLibCheck": true,
-    "types": ["mocha", "@types/snowpack-env", "svelte"],
+    "types": ["mocha", "snowpack-env", "@types/snowpack-env", "svelte"],
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "useDefineForClassFields": true,

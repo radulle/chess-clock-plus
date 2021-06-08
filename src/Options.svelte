@@ -1,18 +1,25 @@
 <script lang="ts">
+  import Colors from "./Colors.svelte"
   import Icon from "./Icon.svelte"
-  import { configs, settings, state } from "./store"
+  import { modes, settings, state } from "./stores"
+
+  let colors = false
 </script>
 
 <div class="Options">
   <div class="header">
     <Icon type={$settings.mute ? "muted" : "sound"} on:click={settings.mute} />
     <div style="flex: 1;" />
+    <Icon type="colors" on:click={() => (colors = !colors)} />
+
     <Icon type="close" on:click={settings.close} />
   </div>
+  <Colors open={colors} />
+
   <h1>Game modes</h1>
   <ul>
-    {#each $configs as [name] (name)}
-      <li class:selected={$state.name === name} on:click={configs.select(name)}>
+    {#each $modes as [name] (name)}
+      <li class:selected={$state.name === name} on:click={modes.select(name)}>
         {name}
       </li>
     {/each}
