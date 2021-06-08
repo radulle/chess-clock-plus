@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getTimeParts, pad } from "./helpers"
+  import Icon from "./Icon.svelte"
   import { press, state } from "./stores"
 
   export let player: 0 | 1
@@ -14,7 +15,9 @@
   class={`Trigger p${player}`}
   on:mousedown={press(player)}
   class:selected={$state.lastPlayer === player}
-  class:ready={$state.status === "ready"}><div>{time}</div></button
+  class:ready={$state.status === "ready"}
+  ><div>{time}</div>
+  <Icon class={`piece p${player}`} type="queen" /></button
 >
 
 <style type="scss">
@@ -22,6 +25,7 @@
     > div {
       font-size: calc(2 * var(--unit));
     }
+    position: relative;
     width: 100%;
     height: 50%;
     border: unset;

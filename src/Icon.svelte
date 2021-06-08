@@ -18,6 +18,7 @@
 
 <style type="scss">
   .Icon {
+    z-index: 1;
     cursor: pointer;
     transition: 0.2s ease-in-out;
     opacity: 100;
@@ -32,6 +33,23 @@
     &.hidden {
       opacity: 0;
       pointer-events: none;
+    }
+    &.piece {
+      border: none;
+      box-shadow: none;
+      background: none;
+      fill: black;
+      position: absolute;
+      margin: 1em;
+      &.p0 {
+        top: 0;
+        left: 0;
+        transform: rotate(180deg);
+      }
+      &.p1 {
+        right: 0;
+        bottom: 0;
+      }
     }
   }
 </style>

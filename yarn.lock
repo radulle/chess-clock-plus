@@ -960,10 +960,10 @@ check-error@^1.0.2:
   resolved "https://registry.yarnpkg.com/check-error/-/check-error-1.0.2.tgz#574d312edd88bb5dd8912e9286dd6c0aed4aac82"
   integrity sha1-V00xLt2Iu13YkS6Sht1sCu1KrII=
 
-chess-clock@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/chess-clock/-/chess-clock-0.4.1.tgz#b7e45e44f1efd65fbdad484fb68b07afc3e9cced"
-  integrity sha512-BDpwYf1/TWz5kYWftQpZ+CIIAWYUeUk69juCjy2HdFEFCfm2TONwJEis8hW+zh22KncZl1zF/fymmW5Zet6USg==
+chess-clock@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/chess-clock/-/chess-clock-0.5.0.tgz#633a61ce1c87fa7808b9baef03788290f3f50b1c"
+  integrity sha512-Pp7kAJCtDf31xoNm1tpcwznonkSTFCk1HuT1ngm1krEyWul95uyJf2tt04ckjsU1n0V1TuxrMeNnq6BejGaqXQ==
 
 "chokidar@>=3.0.0 <4.0.0", chokidar@^3.4.3:
   version "3.5.1"
