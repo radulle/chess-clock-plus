@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getTimeParts, pad } from "./helpers"
+  import { classes, getTimeParts, pad } from "./helpers"
   import Icon from "./Icon.svelte"
   import { press, state } from "./stores"
 
@@ -17,7 +17,15 @@
   class:selected={$state.lastPlayer === player}
   class:ready={$state.status === "ready"}
   ><div>{time}</div>
-  <Icon class={`piece p${player}`} type="queen" /></button
+  <Icon
+    class={classes(
+      "piece",
+      `p${player}`,
+      ($state.status === "live" || $state.status === "ready") && "hidden",
+      $state.white === player && "white"
+    )}
+    type="queen"
+  /></button
 >
 
 <style type="scss">

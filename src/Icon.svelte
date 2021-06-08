@@ -35,6 +35,7 @@
       pointer-events: none;
     }
     &.piece {
+      filter: drop-shadow(0 0 0.1em var(--color-brown));
       border: none;
       box-shadow: none;
       background: none;
@@ -49,6 +50,12 @@
       &.p1 {
         right: 0;
         bottom: 0;
+      }
+      &.white {
+        fill: white;
+      }
+      &.hidden {
+        transition: unset;
       }
     }
   }
