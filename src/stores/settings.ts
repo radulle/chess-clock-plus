@@ -11,12 +11,14 @@ const defaultSettings = {
     "--color-border": "#fff4d3",
     "--color-border2": "#e5e1d2",
   },
+  grant: 15000,
 }
 
 export const settings = (() => {
   const { subscribe, set, update } = persistent<{
     open?: boolean
     mute?: boolean
+    grant: number
     colors: { [key: string]: string }
   }>("settings", copyObj(defaultSettings))
   return {

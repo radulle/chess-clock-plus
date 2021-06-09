@@ -1,13 +1,19 @@
 <script lang="ts">
   import { classes, getTimeParts, pad } from "./helpers"
   import Icon from "./Icon.svelte"
-  import { press, state } from "./stores"
+  import IconButton from "./IconButton.svelte"
+  import Pop from "./Pop.svelte"
+  import { clock, press, settings, state } from "./stores"
 
   export let player: 0 | 1
   let time: string
   $: {
     const t = getTimeParts($state.remainingTime[player])
     time = `${pad(t.h)}:${pad(t.m)}:${pad(t.s)}.${(t.ms / 100) | 0}`
+  }
+
+  function grant() {
+    clock.addTime(player === 1 ? 0 : 1, 15000)
   }
 </script>
 
@@ -25,7 +31,18 @@
       $state.white === player && "white"
     )}
     type="queen"
-  /></button
+  />
+  <div
+    class={classes(
+      "iconbuttons",
+      `p${player}`,
+      ($state.status === "live" || $state.status === "done") && "hidden"
+    )}
+  >
+    <Pop text={`+${$settings.grant / 1000}s`}>
+      <IconButton type="gift" label="Grant" on:click={grant} />
+    </Pop>
+  </div></button
 >
 
 <style type="scss">
@@ -81,6 +98,24 @@
       &.ready {
         margin-bottom: calc(var(--unit) / 2);
         height: calc(50% - var(--unit) / 2);
+      }
+    }
+    .iconbuttons {
+      position: absolute;
+      display: flex;
+      opacity: 100%;
+      &.p0 {
+        top: 0;
+        right: 0;
+        transform: rotate(180deg);
+      }
+      &.p1 {
+        left: 0;
+        bottom: 0;
+      }
+      &.hidden {
+        opacity: 0;
+        pointer-events: none;
       }
     }
   }
